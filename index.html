@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය | නිල වෙබ්අඩවිය</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Sans Sinhala', sans-serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f8f9fa;
+        }
+        
+        /* Navigation */
+        nav {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            margin-top: 60px;
+            background: linear-gradient(rgba(30, 60, 114, 0.8), rgba(42, 82, 152, 0.8)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f0f0f0" width="1200" height="600"/><path fill="%23e0e0e0" d="M0 300L50 325L100 300L150 275L200 300L250 325L300 300L350 275L400 300L450 325L500 300L550 275L600 300L650 325L700 300L750 275L800 300L850 325L900 300L950 275L1000 300L1050 325L1100 300L1150 275L1200 300V600H0V300Z"/></svg>');
+            background-size: cover;
+            color: white;
+            padding: 6rem 5%;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
+        
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            font-weight: 900;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(231, 76, 60, 0.4);
+            background: #c0392b;
+        }
+        
+        /* Mission Section */
+        .mission {
+            padding: 4rem 5%;
+            background: white;
+            text-align: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            color: #1e3c72;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #e74c3c;
+            margin: 10px auto;
+            border-radius: 2px;
+        }
+        
+        .mission-text {
+            font-size: 1.2rem;
+            color: #555;
+            line-height: 2;
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 5px solid #2a5298;
+            text-align: left;
+        }
+        
+        /* Goals Grid */
+        .goals {
+            padding: 4rem 5%;
+            background: #f0f4f8;
+        }
+        
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .goal-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            border-top: 4px solid #2a5298;
+        }
+        
+        .goal-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .goal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .goal-card h3 {
+            color: #1e3c72;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 3rem auto;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: #2a5298;
+        }
+        
+        .timeline-item {
+            margin-bottom: 3rem;
+            position: relative;
+            width: 50%;
+            padding: 0 2rem;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+        }
+        
+        .timeline-year {
+            display: inline-block;
+            background: #e74c3c;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            padding: 4rem 5%;
+            background: #1e3c72;
+            color: white;
+        }
+        
+        .gallery h2 {
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .gallery-item {
+            background: rgba(255,255,255,0.1);
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(255,255,255,0.3);
+            transition: all 0.3s;
+        }
+        
+        .gallery-item:hover {
+            background: rgba(255,255,255,0.2);
+            transform: scale(1.05);
+        }
+        
+        /* Donors Section */
+        .donors {
+            padding: 4rem 5%;
+            background: white;
+        }
+        
+        .donor-category {
+            margin-bottom: 2rem;
+        }
+        
+        .donor-category h3 {
+            color: #e74c3c;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        
+        .donor-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .donor-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Sponsorship */
+        .sponsorship {
+            padding: 4rem 5%;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        
+        .sponsor-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .sponsor-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .sponsor-amount {
+            font-size: 2rem;
+            color: #e74c3c;
+            font-weight: 900;
+            margin: 1rem 0;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            padding: 5rem 5%;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .join-button {
+            display: inline-block;
+            background: white;
+            color: #e74c3c;
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 900;
+            font-size: 1.2rem;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+        
+        .join-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1e3c72;
+            color: white;
+            text-align: center;
+            padding: 2rem 5%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { width: 100%; left: 0 !important; padding-left: 50px; text-align: left !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">ශ්‍රී ධීරානන්ද විදුහල</a>
+            <ul class="nav-links">
+                <li><a href="#mission">දැක්ම</a></li>
+                <li><a href="#goals">අරමුණු</a></li>
+                <li><a href="#timeline">සංවර්ධනය</a></li>
+                <li><a href="#gallery">ගැලරිය</a></li>
+                <li><a href="#donors">දායකයින්</a></li>
+                <li><a href="#join">එක්වන්න</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය</h1>
+            <p class="tagline">අපේ පාසල, අපේ උරුමය, අපේ අනාගතය</p>
+            <p style="font-size: 1.1rem; margin-bottom: 2rem; opacity: 0.9;">
+                දේශීය හා විදේශගත ආදි ශිෂ්‍යයින් එකමුතුවෙන් අපගේ පාසල උසස් කිරීම සඳහා වන ඒකාබද්ධ ප්‍රයත්නය
+            </p>
+            <a href="#join" class="cta-button">සාමාජිකත්වය ලබාගන්න</a>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <h2 class="section-title">ප්‍රධාන අරමුණ</h2>
+            <div class="mission-text">
+                <p style="font-size: 1.3rem; color: #1e3c72; font-weight: 700; margin-bottom: 1rem;">
+                    "අපගේ පාසලෙන් ඉගෙන ගෙන පිට නගරයේ පාසල් සොයා යන දරුවන්ගේ ප්‍රමාණය අවම කිරීම"
+                </p>
+                <p>
+                    පාසලේ පහසුකම් හා අධ්‍යාපනික ගුණාත්මකභාවය ඉහළ නැංවීම තුළින්, දරුවන්ට ශ්‍රී ධීරානන්ද විදුහලේ දීම මහත් ඉදිරි අනාගතයක් ගොඩනැගිය හැකි බව විශ්වාස කරමු. 
+                    පිට පාසල් වෙත ඇදීයාම වලකිමින්, අපගේම පාසලේදීම විශිෂ්ට අධ්‍යාපනයක් දීම අපගේ ප්‍රධාන ඉලක්කයයි.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals" id="goals">
+        <div class="container">
+            <h2 class="section-title">අපේක්ෂිත සංවර්ධන අරමුණු</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                ඔබගේ දායකත්වය තුළින් අපට හැකියාව ලැබෙනුයේ පාසල් පහසුකම් පහත ප්‍රමිතීන්ට උසස් කිරීමටයි
+            </p>
+            
+            <div class="goals-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">🏟️</div>
+                    <h3>ක්‍රීඩා පිටිය</h3>
+                    <p>නවීන පහසුකමින් යුත් පූර්ණ ප්‍රමාණයේ ක්‍රීඩා පිටියක් ඉදිකිරීම</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🏢</div>
+                    <h3>ගෘහස්ථ ක්‍රීඩාංගනය</h3>
+                    <p>වැසි, පීඩන ආදී කාලගුණ තත්ත්ව නොබලා ක්‍රීඩා කටයුතු සිදුකළ හැකි වහලයක් සහිත ශාලාව</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🏊</div>
+                    <h3>පිහිණුම් තටාකය</h3>
+                    <p>ඔලිම්පික් ප්‍රමිතියේ පිහිණුම් පුහුණුව සඳහා නවීන තටාකයක්</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🚌</div>
+                    <h3>පාසල් බස් රථ සේවාව</h3>
+                    <p>දුර ප්‍රදේಶවල සිසුන්ට පහසුකම් සපයන සුරක්ෂිත බස් රථ පහසුකම්</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">🌳</div>
+                    <h3>ඉඩම් සංවර්ධනය</h3>
+                    <p>පාසල අවට පරිත්‍යාගශීලීන්ගෙන් හා වෙනත් සුදුසු ඉඩම් ලබාගැනීමෙන් පුළුල් කිරීම</p>
+                </div>
+                
+                <div class="goal-card">
+                    <div class="goal-icon">⚽</div>
+                    <h3>ක්‍රීඩා අනුග්‍රහය</h3>
+                    <p>දරුවන්ගේ ක්‍රීඩා කටයුතු සඳහා පිරිවැටුම්, ඇඳුම් පැළඳුම් සහ උපකරණ ලබාදීම</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Timeline -->
+    <section class="timeline-section" id="timeline">
+        <div class="container">
+            <h2 class="section-title">සංවර්ධන කටයුතු (2023-2025)</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">ආදි ශිෂ්‍ය සංගමය විසින් සිදුකරන ලද ප්‍රගතිය</p>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2023</span>
+                        <h3>ප්‍රථම අදියර</h3>
+                        <ul style="list-style: none; margin-top: 0.5rem;">
+                            <li>• පුස්තකාලය නවීකරණය කිරීම</li>
+                            <li>• පරිගණක රාමු 10ක් පරිත්‍යාගය</li>
+                            <li>• දේශන ශාලාව සංස්කරණය</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h3>වර්ධනයේ අදියර</h3>
+                        <ul style="list-style: none; margin-top: 0.5rem;">
+                            <li>• විද්‍යාගාර සැකසුම් යතුරු ලබාදීම</li>
+                            <li>• ක්‍රීඩා උපකරණ බෙදාහැරීම</li>
+                            <li>• ශිෂ්‍යත්ව අරමුදල් පිහිටුවීම</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2025</span>
+                        <h3>විස්තීර්ණ අදියර</h3>
+                        <ul style="list-style: none; margin-top: 0.5rem;">
+                            <li>• ක්‍රීඩා පිටිය සංවර්ධනය ආරම්භය</li>
+                            <li>• පිහිණුම් තටාකයට අවශ්‍ය අවසර</li>
+                            <li>• නව ගොඩනැගිලි ඉදිකිරීම් අරම්භය</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">ඡායාරූප ගැලරිය</h2>
+            <p style="text-align: center; opacity: 0.9; margin-bottom: 2rem;">
+                අපගේ සංවර්ධන කටයුතුවල දෘෂ්‍ය ප්‍රස්ථාරික සටහන
+            </p>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item">📸 පුස්තකාල නවීකරණය</div>
+                <div class="gallery-item">📸 පරිගණක පංතිකාමරය</div>
+                <div class="gallery-item">📸 ක්‍රීඩා උපකරණ බෙදාහැරීම</div>
+                <div class="gallery-item">📸 ශිෂ්‍යත්ව ප්‍රදානෝත්සවය</div>
+                <div class="gallery-item">📸 වැඩමුළු පැවැත්වීම</div>
+                <div class="gallery-item">📸 ආදි ශිෂ්‍ය රැස්වීම්</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donors List -->
+    <section class="donors" id="donors">
+        <div class="container">
+            <h2 class="section-title">හදවතින්ම ස්තූතිවන්ත වන්නාවූ දායකයින්</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">
+                අපගේ සංවර්ධනය වෙනුවෙන් තනි තනිව හා ආයතනිකව දායකත්වය ලබාදුන් අය
+            </p>
+            
+            <div class="donor-category">
+                <h3>🥇 ප්‍රධාන ආරාධිත දායකයින් (Principal Donors)</h3>
+                <div class="donor-list">
+                    <span class="donor-tag">ආචාර්ය සම්පත් පෙරේරා (වෙදරට්‌ව)</span>
+                    <span class="donor-tag">මහාචාර්ය චන්ද්‍රika කුමාරසිංහ (ඕස්ට්‍රේලියාව)</span>
+                    <span class="donor-tag">සමාගම් දායකත්වය: CBL සමූහය</span>
+                    <span class="donor-tag">සමාගම් දායකත්වය: ජෝන් කීල්ස් ආයතනය</span>
+                </div>
+            </div>
+            
+            <div class="donor-category">
+                <h3>🥈 රන්දායකයින් (Gold Contributors)</h3>
+                <div class="donor-list">
+                    <span class="donor-tag">සරත් ප්‍රනාන්දු (දුබායි)</span>
+                    <span class="donor-tag">ජයන්ති විජේසේකර (කැනඩාව)</span>
+                    <span class="donor-tag">සුනිමල් ශ්‍රීවර්ධන (එක්සත් රාජධානිය)</span>
+                    <span class="donor-tag">දිල්‍රුක්ෂි වික්‍රමරත්න (සිංගප්පූරුව)</span>
+                </div>
+            </div>
+            
+            <div class="donor-category">
+                <h3>🥉 රිදී දායකයින් (Silver Supporters)</h3>
+                <div class="donor-list">
+                    <span class="donor-tag">ප්‍රියාන්ත ප්‍රනාන්දු</span>
+                    <span class="donor-tag">සඳුන් ගුණවර්ධන</span>
+                    <span class="donor-tag">නිමල් රත්නායක</span>
+                    <span class="donor-tag">කසුන් ද සිල්වා</span>
+                    <span class="donor-tag">මධුෂාන් ප්‍රේමසිරි</span>
+                    <span class="donor-tag">සහ තවත් බොහෝ දෙනා...</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sponsorship -->
+    <section class="sponsorship">
+        <div class="container">
+            <h2 class="section-title">අනුග්‍රහයන්</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">
+                විදුහලට ලබාදුන් ප්‍රධාන අනුග්‍රහයන් සහ ඒවායේ බලපෑම
+            </p>
+            
+            <div class="sponsor-cards">
+                <div class="sponsor-card">
+                    <h3>විද්‍යා ප්‍රදේශය සංවර්ධනය</h3>
+                    <div class="sponsor-amount">රු. 5,00,000+</div>
+                    <p>නවීන රසායනාගාර උපකරණ ලබාදීම</p>
+                    <small>දායකයා: ආචාර්ය එස්.ඒ. වික්‍රමසිංහ</small>
+                </div>
+                
+                <div class="sponsor-card">
+                    <h3>ක්‍රීඩා ක්ෂේත්‍රය සංවර්ධනය</h3>
+                    <div class="sponsor-amount">රු. 3,50,000</div>
+                    <p>ක්‍රිකට් උපකරණ සහ ශිෂ්‍ය ක්‍රීඩා පොටි</p>
+                    <small>දායකයා: Old Dhieraanandians Sports Club - කොළඹ</small>
+                </div>
+                
+                <div class="sponsor-card">
+                    <h3>පුස්තකාල සම්පත්</h3>
+                    <div class="sponsor-amount">පොත් 500+</div>
+                    <p>නවීකරණය කළ පුස්තකාලය සඳහා පොත් පරිත්‍යාග</p>
+                    <small>දායකයා: 1995 සමතර පන්තිය</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta" id="join">
+        <div class="container">
+            <h2>ඔබේ පාසලට ආපසු එන්න</h2>
+            <p>
+                අපි ශක්තිමත් වන්නේ එකමුතුවෙනි. ඔබේ දැනුම, අත්දැකීම් සහ සම්පත් අපගේ අනාගත පරපුර වෙනුවෙන් යොදවන්න.<br>
+                <strong>අදම ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමයට එක්වෙන්න!</strong>
+            </p>
+            
+            <div style="background: rgba(255,255,255,0.2); padding: 2rem; border-radius: 15px; max-width: 600px; margin: 2rem auto; backdrop-filter: blur(10px);">
+                <h3 style="margin-bottom: 1rem;">සාමාජිකත්ව ප්‍රයෝජන:</h3>
+                <ul style="list-style: none; text-align: left; display: inline-block;">
+                    <li>✅ වාර්ෂික ආදි ශිෂ්‍ය රැස්වීම් සඳහා සහභාගිවීමේ අවස්ථාව</li>
+                    <li>✅ පාසලේ සංවර්ධන කටයුතුවලට සෘජුව දායක වීමේ හැකියාව</li>
+                    <li>✅ විදේශගත ආදි ශිෂ්‍ය නෙට්වර්ක් එකකට සම්බන්ධ වීම</li>
+                    <li>✅ වෘත්තීය සම්බන්ධතා වැඩිදුරටත් ශක්තිමත් කර ගැනීම</li>
+                </ul>
+            </div>
+            
+            <a href="#" class="join-button">අදම ආදි ශිෂ්‍ය සංගමයට එක්වෙන්න</a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.9;">
+                හෝ අමතන්න: 077-1234567 | ඊමේළ්: alumni@dhieraananda.edu.lk
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය. සියලු හිමිකම් ඇවිරිණි.</p>
+        <p>නිර්මාණය කළේ: ආදි ශිෂ්‍යයින්ගේ ආදි ශිෂ්‍යයින් වෙනුවෙන්</p>
+    </footer>
+
+</body>
+</html>
