@@ -5,16 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය</title>
     
-    <!-- Google Fonts for Sinhala -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700;800&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400 ;600;700;800&family=Baloo+2:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css ">
     
-    <!-- FontAwesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js "></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js "></script>
 
     <style>
         :root {
@@ -26,11 +24,7 @@
             --gold: #d4af37;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Noto Sans Sinhala', 'Baloo 2', sans-serif;
@@ -81,11 +75,10 @@
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
         }
 
-        .logo-icon img {
+        .logo-icon img, .logo-icon i {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            padding: 5px;
         }
 
         .logo-text h1 {
@@ -132,9 +125,7 @@
             transition: width 0.3s;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
 
         .mobile-menu {
             display: none;
@@ -143,7 +134,7 @@
             cursor: pointer;
         }
 
-        /* Hero Section with School Image */
+        /* Hero Section */
         .hero {
             margin-top: 86px;
             position: relative;
@@ -160,11 +151,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('/school.png');
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
-            filter: brightness(0.4) contrast(1.1);
             z-index: 1;
         }
 
@@ -174,7 +164,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(0, 0, 0, 0.6) 100%);
+            background: linear-gradient(135deg, rgba(30, 58, 138, 0.9) 0%, rgba(0, 0, 0, 0.7) 100%);
             z-index: 2;
         }
 
@@ -198,9 +188,13 @@
             border: 5px solid var(--gold);
             box-shadow: 0 10px 40px rgba(0,0,0,0.5);
             animation: pulse 2s infinite;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
         }
 
-        .hero-logo img {
+        .hero-logo img, .hero-logo i {
             width: 100%;
             height: 100%;
             object-fit: contain;
@@ -266,9 +260,7 @@
             transition: left 0.5s;
         }
 
-        .cta-button:hover::before {
-            left: 100%;
-        }
+        .cta-button:hover::before { left: 100%; }
 
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
@@ -294,17 +286,11 @@
         }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        /* Section Styles */
+        /* Sections */
         section {
             padding: 5rem 2rem;
             max-width: 1200px;
@@ -343,7 +329,7 @@
             margin: 0 auto;
         }
 
-        /* Mission Section */
+        /* Mission */
         .mission-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -377,7 +363,7 @@
             margin-bottom: 1rem;
         }
 
-        /* Objectives Section */
+        /* Objectives */
         .objectives {
             background: white;
             border-radius: 20px;
@@ -408,9 +394,7 @@
             color: white;
         }
 
-        .objective-item:hover i {
-            color: var(--secondary-color);
-        }
+        .objective-item:hover i { color: var(--secondary-color); }
 
         .objective-item i {
             font-size: 1.5rem;
@@ -418,7 +402,7 @@
             margin-top: 0.3rem;
         }
 
-        /* Development Timeline */
+        /* Timeline */
         .timeline {
             position: relative;
             padding: 2rem 0;
@@ -447,9 +431,7 @@
             text-align: right;
         }
 
-        .timeline-item:nth-child(even) {
-            left: 50%;
-        }
+        .timeline-item:nth-child(even) { left: 50%; }
 
         .timeline-content {
             background: white;
@@ -480,13 +462,8 @@
             box-shadow: 0 0 0 4px var(--primary-color);
         }
 
-        .timeline-item:nth-child(odd) .timeline-dot {
-            right: -10px;
-        }
-
-        .timeline-item:nth-child(even) .timeline-dot {
-            left: -10px;
-        }
+        .timeline-item:nth-child(odd) .timeline-dot { right: -10px; }
+        .timeline-item:nth-child(even) .timeline-dot { left: -10px; }
 
         /* Gallery */
         .gallery-grid {
@@ -501,6 +478,7 @@
             border-radius: 15px;
             height: 250px;
             cursor: pointer;
+            background: #ddd;
         }
 
         .gallery-item img {
@@ -510,9 +488,7 @@
             transition: transform 0.5s;
         }
 
-        .gallery-item:hover img {
-            transform: scale(1.1);
-        }
+        .gallery-item:hover img { transform: scale(1.1); }
 
         .gallery-overlay {
             position: absolute;
@@ -526,11 +502,9 @@
             transition: transform 0.3s;
         }
 
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
-        }
+        .gallery-item:hover .gallery-overlay { transform: translateY(0); }
 
-        /* Donors Section */
+        /* Donors */
         .donors-section {
             background: linear-gradient(135deg, #1e3a8a 0%, #0f172a 100%);
             color: white;
@@ -568,7 +542,7 @@
             margin-top: 0.5rem;
         }
 
-        /* Membership Form Modal */
+        /* Modal */
         .modal {
             display: none;
             position: fixed;
@@ -596,14 +570,8 @@
         }
 
         @keyframes slideIn {
-            from {
-                opacity: 0;
-                transform: translateY(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .modal-header {
@@ -616,9 +584,7 @@
             z-index: 10;
         }
 
-        .modal-header h2 {
-            margin-bottom: 0.5rem;
-        }
+        .modal-header h2 { margin-bottom: 0.5rem; }
 
         .close-btn {
             position: absolute;
@@ -635,13 +601,9 @@
             transition: background 0.3s;
         }
 
-        .close-btn:hover {
-            background: rgba(255,255,255,0.2);
-        }
+        .close-btn:hover { background: rgba(255,255,255,0.2); }
 
-        .form-container {
-            padding: 2rem;
-        }
+        .form-container { padding: 2rem; }
 
         .success-message {
             display: none;
@@ -703,9 +665,7 @@
             margin-bottom: 0.5rem;
         }
 
-        .file-upload input {
-            display: none;
-        }
+        .file-upload input { display: none; }
 
         .submit-btn {
             width: 100%;
@@ -720,10 +680,7 @@
             transition: transform 0.3s;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-        }
-
+        .submit-btn:hover { transform: translateY(-2px); }
         .submit-btn:disabled {
             opacity: 0.6;
             cursor: not-allowed;
@@ -737,14 +694,9 @@
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+        .footer-content { max-width: 1200px; margin: 0 auto; }
 
-        .social-links {
-            margin: 2rem 0;
-        }
+        .social-links { margin: 2rem 0; }
 
         .social-links a {
             color: white;
@@ -753,54 +705,26 @@
             transition: color 0.3s;
         }
 
-        .social-links a:hover {
-            color: var(--secondary-color);
-        }
+        .social-links a:hover { color: var(--secondary-color); }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-            
-            .mobile-menu {
-                display: block;
-            }
-            
-            .hero h2 {
-                font-size: 2.2rem;
-            }
-            
-            .hero h2 span {
-                font-size: 1.8rem;
-            }
-            
-            .hero-logo {
-                width: 120px;
-                height: 120px;
-            }
-            
-            .timeline::before {
-                left: 30px;
-            }
-            
+            .nav-links { display: none; }
+            .mobile-menu { display: block; }
+            .hero h2 { font-size: 2.2rem; }
+            .hero h2 span { font-size: 1.8rem; }
+            .hero-logo { width: 120px; height: 120px; }
+            .timeline::before { left: 30px; }
             .timeline-item {
                 width: 100%;
                 left: 0 !important;
                 padding-left: 80px;
                 text-align: left !important;
             }
-            
-            .timeline-dot {
-                left: 20px !important;
-            }
-            
-            .objectives {
-                padding: 2rem;
-            }
+            .timeline-dot { left: 20px !important; }
+            .objectives { padding: 2rem; }
         }
 
-        /* Loading Spinner */
         .spinner {
             border: 3px solid #f3f3f3;
             border-top: 3px solid var(--primary-color);
@@ -817,6 +741,25 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Image Placeholder Styles */
+        .img-placeholder {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1rem;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .img-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
@@ -826,7 +769,7 @@
         <div class="nav-container">
             <div class="logo">
                 <div class="logo-icon">
-                    <img src="/logo.jpg" alt="OSA Logo">
+                    <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--primary-color);"></i>
                 </div>
                 <div class="logo-text">
                     <h1>ශ්‍රී ධීරානන්ද විදුහල</h1>
@@ -847,21 +790,23 @@
         </div>
     </nav>
 
-    <!-- Hero Section with School Building Background -->
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background"></div>
         <div class="hero-overlay"></div>
         
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="/mnt/kimi/upload/logo.jpg" alt="OSA Logo">
+                <i class="fas fa-graduation-cap" style="font-size: 5rem; color: var(--primary-color);"></i>
             </div>
             <h2>
                 අපේ පාසල අපේ අභිමානය
                 <span>ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය</span>
             </h2>
-		<P>දේශීය හා විදේශගත ආදි ශිෂ්‍යයින් එකමුතුවෙන් අපගේ පාසල උසස් කිරීම සඳහා වන ඒකාබද්ධ ප්‍රයත්නය</P>
-           
+            <p>අපේ පාසල, අපේ උරුමය, අපේ අනාගතය</p>
+
+<p>දේශීය හා විදේශගත ආදි ශිෂ්‍යයින් එකමුතුවෙන් අපගේ පාසල උසස් කිරීම සඳහා වන ඒකාබද්ධ ප්‍රයත්නය
+	</p>
             <button class="cta-button" onclick="openModal()">
                 <i class="fas fa-hand-holding-heart"></i> අදම ආදි ශිෂ්‍ය සංගමයට එක්වෙන්න
             </button>
@@ -881,25 +826,19 @@
         
         <div class="mission-grid">
             <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fas fa-school"></i>
-                </div>
+                <div class="mission-icon"><i class="fas fa-school"></i></div>
                 <h3>පාසල් පහසුකම් වැඩි දියුණු කිරීම</h3>
                 <p>අපගේ පාසලෙන් ඉගෙන ගෙන පිට නගරයේ පාසල් සොයා යන දරුවන්ගේ ප්‍රමාණය අවම කිරීමට පාසලේ යටිතල පහසුකම් ශක්තිමත් කිරීම.</p>
             </div>
             
             <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fas fa-users"></i>
-                </div>
+                <div class="mission-icon"><i class="fas fa-users"></i></div>
                 <h3>ආදි ශිෂ්‍ය එකමුතුව</h3>
                 <p>දේශීය හා විදේශගතව සේවය කරන ආදි ශිෂ්‍යයින්ගේ වෘත්තීය හා සමාජ සම්බන්ධතා ඔස්සේ පාසල් සංවර්ධනයට දායක වීම.</p>
             </div>
             
             <div class="mission-card">
-                <div class="mission-icon">
-                    <i class="fas fa-heart"></i>
-                </div>
+                <div class="mission-icon"><i class="fas fa-heart"></i></div>
                 <h3>සමාජ වගකීම</h3>
                 <p>පාසලට ඇති සමාජ වගකීම අවධාරණය කරමින් විශ්වාසය සහ එකමුතුව වර්ධනය කිරීම.</p>
             </div>
@@ -916,66 +855,35 @@
         <div class="objectives-grid">
             <div class="objective-item">
                 <i class="fas fa-futbol"></i>
-                <div>
-                    <h4>ක්‍රීඩා පිටිය</h4>
-                    <p>පාසලට නවීන ක්‍රීඩා පිටියක් ලබාදීම</p>
-                </div>
+                <div><h4>ක්‍රීඩා පිටිය</h4><p>පාසලට නවීන ක්‍රීඩා පිටියක් ලබාදීම</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-building"></i>
-                <div>
-                    <h4>ගෘහස්ථ ක්‍රීඩාංගනය</h4>
-                    <p>වර්ෂාවේදීත් ක්‍රීඩා කටයුතු කළ හැකි ශාලාවක්</p>
-                </div>
+                <div><h4>ගෘහස්ථ ක්‍රීඩාංගනය</h4><p>වර්ෂාවේදීත් ක්‍රීඩා කටයුතු කළ හැකි ශාලාවක්</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-swimming-pool"></i>
-                <div>
-                    <h4>පිහිණුම් තටාකය</h4>
-                    <p>දරුවන්ගේ පිහිණුම් හැකියා වර්ධනය කිරීම</p>
-                </div>
+                <div><h4>පිහිණුම් තටාකය</h4><p>දරුවන්ගේ පිහිණුම් හැකියා වර්ධනය කිරීම</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-bus"></i>
-                <div>
-                    <h4>පාසල් බස් රථය</h4>
-                    <p>දුර ප්‍රදේශවලින් පැමිණෙන දරුවන්ට පහසුකම්</p>
-                </div>
+                <div><h4>පාසල් බස් රථය</h4><p>දුර ප්‍රදේශවලින් පැමිණෙන දරුවන්ට පහසුකම්</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-map-marked-alt"></i>
-                <div>
-                    <h4>ඉඩම් ලබාගැනීම</h4>
-                    <p>පරිත්‍යාගශීලීන්ගෙන් හා වෙනත් මූලාශ්‍රවලින් ඉඩම්</p>
-                </div>
+                <div><h4>ඉඩම් ලබාගැනීම</h4><p>පරිත්‍යාගශීලීන්ගෙන් හා වෙනත් මූලාශ්‍රවලින් ඉඩම්</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-chart-line"></i>
-                <div>
-                    <h4>සමස්ත සංවර්ධනය</h4>
-                    <p>පාසලේ සමගි සම්පූර්ණ සංවර්ධන කටයුතු</p>
-                </div>
+                <div><h4>සමස්ත සංවර්ධනය</h4><p>පාසලේ සමගි සම්පූර්ණ සංවර්ධන කටයුතු</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-running"></i>
-                <div>
-                    <h4>ක්‍රීඩා අනුග්‍රහය</h4>
-                    <p>දරුවන්ගේ ක්‍රීඩා කටයුතු සඳහා අනුග්‍රහ</p>
-                </div>
+                <div><h4>ක්‍රීඩා අනුග්‍රහය</h4><p>දරුවන්ගේ ක්‍රීඩා කටයුතු සඳහා අනුග්‍රහ</p></div>
             </div>
-            
             <div class="objective-item">
                 <i class="fas fa-book-reader"></i>
-                <div>
-                    <h4>අධ්‍යාපනික සහයෝගය</h4>
-                    <p>අධ්‍යාපනික ද්‍රව්‍ය සහ ශිෂ්‍යත්ව සහයෝගය</p>
-                </div>
+                <div><h4>අධ්‍යාපනික සහයෝගය</h4><p>අධ්‍යාපනික ද්‍රව්‍ය සහ ශිෂ්‍යත්ව සහයෝගය</p></div>
             </div>
         </div>
     </section>
@@ -992,7 +900,7 @@
                 <div class="timeline-content">
                     <span class="timeline-year">2025</span>
                     <h3>නව පරිගණක විද්‍යාගාරය</h3>
-                    <p>නවීන පරිගණක 20 කින් සමන්විත පරිගණක විද්‍යාගාරයක් ස්ථාපනය කරන ලදී. මෙමගින් දරුවන්ට තාක්ෂණික කුසලතා වර්ධනය කිරීමේ අවස්ථාව ලැබුණි.</p>
+                    <p>නවීන පරිගණක 20 කින් සමන්විත පරිගණක විද්‍යාගාරයක් ස්ථාපනය කරන ලදී.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -1001,7 +909,7 @@
                 <div class="timeline-content">
                     <span class="timeline-year">2024</span>
                     <h3>පුස්තකාල පහසුකම් වැඩිදියුණු කිරීම</h3>
-                    <p>නව පොත් 500 කට අධික ප්‍රමාණයක් පරිත්‍යාග කරමින් පාසල් පුස්තකාලය පොහොසත් කරන ලදී. කියවීමේ කුටි සහිත නවීන පුස්තකාල කාමරයක් නිර්මාණය කරන ලදී.</p>
+                    <p>නව පොත් 500 කට අධික ප්‍රමාණයක් පරිත්‍යාග කරමින් පාසල් පුස්තකාලය පොහොසත් කරන ලදී.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -1010,7 +918,7 @@
                 <div class="timeline-content">
                     <span class="timeline-year">2024</span>
                     <h3>විද්‍යා ප්‍රයෝගශාලා සංවර්ධනය</h3>
-                    <p>භෞතික විද්‍යා, රසායන විද්‍යා සහ ජීව විද්‍යා ප්‍රයෝගශාලා නවීකරණය කරන ලදී. නවීන උපකරණ සහිත ප්‍රයෝගශාලා තුනක් දැනට ක්‍රියාත්මකයි.</p>
+                    <p>භෞතික විද්‍යා, රසායන විද්‍යා සහ ජීව විද්‍යා ප්‍රයෝගශාලා නවීකරණය කරන ලදී.</p>
                 </div>
                 <div class="timeline-dot"></div>
             </div>
@@ -1034,52 +942,29 @@
         </div>
         
         <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="/mnt/kimi/upload/ChatGPT Image Jan 30, 2026, 09_31_32 AM.png" alt="School Building">
-                <div class="gallery-overlay">
-                    <h4>ශ්‍රී ධීරානන්ද විදුහල</h4>
-                    <p>අපගේ ප්‍රධාන ගොඩනැගිල්ල</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-school"></i>
+                <span>පාසලේ මූලස්ථාන ගොඩනැගිල්ල</span>
             </div>
-            
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1568667256549-094345857637?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Library">
-                <div class="gallery-overlay">
-                    <h4>පුස්තකාලය</h4>
-                    <p>වැඩිදියුණු කළ කියවීමේ කුටි</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-book-open"></i>
+                <span>පුස්තකාලය</span>
             </div>
-            
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Science Lab">
-                <div class="gallery-overlay">
-                    <h4>විද්‍යා ප්‍රයෝගශාලාව</h4>
-                    <p>නවීන උපකරණ සමඟින්</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-flask"></i>
+                <span>විද්‍යා ප්‍රයෝගශාලාව</span>
             </div>
-            
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="School Event">
-                <div class="gallery-overlay">
-                    <h4>ආදි ශිෂ්‍ය රැස්වීම</h4>
-                    <p>2024 වාර්ෂික රැස්වීම</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-users"></i>
+                <span>ආදි ශිෂ්‍ය රැස්වීම</span>
             </div>
-            
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sports">
-                <div class="gallery-overlay">
-                    <h4>ක්‍රීඩා උත්සවය</h4>
-                    <p>වාර්ෂික ක්‍රීඩා තරඟාවලිය</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-running"></i>
+                <span>ක්‍රීඩා උත්සවය</span>
             </div>
-            
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Donation">
-                <div class="gallery-overlay">
-                    <h4>පරිත්‍යාග ප්‍රදානය</h4>
-                    <p>උපකරණ බෙදාහැරීම</p>
-                </div>
+            <div class="gallery-item img-placeholder">
+                <i class="fas fa-hand-holding-heart"></i>
+                <span>පරිත්‍යාග ප්‍රදානය</span>
             </div>
         </div>
     </section>
@@ -1087,7 +972,7 @@
     <!-- Donors Section -->
     <section id="donors" class="donors-section">
         <div class="section-title" style="color: white;">
-            <h2 style="color: white;">හදවතින්ම ස්තූතිවන්ත වන්නාවූ දායකයින්</h2>
+            <h2 style="color: white;">ස්තුතිවන්ත වන්නේ දායකයින්ට</h2>
             <p style="color: rgba(255,255,255,0.8);">අපගේ විදුහලට ලබාදුන් අනුග්‍රහයන් සඳහා කෘතඥතාව පුද කරමු</p>
         </div>
         
@@ -1099,7 +984,6 @@
                 <div class="donor-amount">රු. 500,000</div>
                 <small>පරිගණක විද්‍යාගාරය සඳහා</small>
             </div>
-            
             <div class="donor-card">
                 <i class="fas fa-user-tie fa-2x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
                 <h4>ඉංජිනේරු නිමල් පෙරේරා</h4>
@@ -1107,7 +991,6 @@
                 <div class="donor-amount">රු. 350,000</div>
                 <small>පුස්තකාල සංවර්ධනය සඳහා</small>
             </div>
-            
             <div class="donor-card">
                 <i class="fas fa-user-tie fa-2x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
                 <h4>වෛද්‍ය චන්දන විජේසිංහ</h4>
@@ -1115,7 +998,6 @@
                 <div class="donor-amount">රු. 750,000</div>
                 <small>විද්‍යා ප්‍රයෝගශාලා සඳහා</small>
             </div>
-            
             <div class="donor-card">
                 <i class="fas fa-users fa-2x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
                 <h4>2005 කණ්ඩායම</h4>
@@ -1123,7 +1005,6 @@
                 <div class="donor-amount">රු. 1,200,000</div>
                 <small>වාර්ෂික සංවර්ධනය සඳහා</small>
             </div>
-            
             <div class="donor-card">
                 <i class="fas fa-user-tie fa-2x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
                 <h4>මහාචාර්ය සුනිල් ජයවර්ධන</h4>
@@ -1131,7 +1012,6 @@
                 <div class="donor-amount">රු. 600,000</div>
                 <small>ශිෂ්‍යත්ව අරමුදල සඳහා</small>
             </div>
-            
             <div class="donor-card">
                 <i class="fas fa-building fa-2x" style="color: var(--secondary-color); margin-bottom: 1rem;"></i>
                 <h4>ABC Holdings Pvt Ltd</h4>
@@ -1145,8 +1025,8 @@
     <!-- Final CTA -->
     <section style="text-align: center; padding: 6rem 2rem; background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);">
         <div style="max-width: 800px; margin: 0 auto;">
-            <div style="width: 100px; height: 100px; margin: 0 auto 2rem; background: white; border-radius: 50%; padding: 10px; border: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
-                <img src="/mnt/kimi/upload/logo.jpg" alt="OSA Logo" style="width: 100%; height: 100%; object-fit: contain;">
+            <div style="width: 100px; height: 100px; margin: 0 auto 2rem; background: white; border-radius: 50%; padding: 10px; border: 4px solid var(--gold); box-shadow: 0 5px 20px rgba(0,0,0,0.1); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-graduation-cap" style="font-size: 3rem; color: var(--primary-color);"></i>
             </div>
             <h2 style="font-size: 2.5rem; color: var(--primary-color); margin-bottom: 1.5rem;">
                 අපගේ පාසලේ අනාගතයට ඔබේ දායකත්වය අවශ්‍යයි
@@ -1163,8 +1043,8 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: white; border-radius: 50%; padding: 8px; border: 3px solid var(--gold);">
-                <img src="/mnt/kimi/upload/logo.jpg" alt="OSA Logo" style="width: 100%; height: 100%; object-fit: contain;">
+            <div style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: white; border-radius: 50%; padding: 8px; border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center;">
+                <i class="fas fa-graduation-cap" style="font-size: 2.5rem; color: var(--primary-color);"></i>
             </div>
             <h3>ශ්‍රී ධීරානන්ද විදුහලේ ආදි ශිෂ්‍ය සංගමය</h3>
             <p>අපේ පාසල අපේ අභිමානය - අපේ දායකත්වය අනාගත පරපුරට</p>
@@ -1187,8 +1067,8 @@
     <div id="membershipModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: white; border-radius: 50%; padding: 5px; border: 3px solid var(--gold);">
-                    <img src="/mnt/kimi/upload/logo.jpg" alt="OSA Logo" style="width: 100%; height: 100%; object-fit: contain; border-radius: 50%;">
+                <div style="width: 60px; height: 60px; margin: 0 auto 1rem; background: white; border-radius: 50%; padding: 5px; border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-graduation-cap" style="font-size: 2rem; color: var(--primary-color);"></i>
                 </div>
                 <h2><i class="fas fa-user-plus"></i> ආදි ශිෂ්‍ය සාමාජිකත්වය</h2>
                 <p>ඔබේ විස්තර පහතින් ඉදිරිපත් කරන්න</p>
@@ -1270,11 +1150,11 @@
     </div>
 
     <script>
-        // Firebase Configuration - ඔබේ Firebase Project එකේ තොරතුරු මෙහි ඇතුළත් කරන්න
+        // Firebase Configuration
         const firebaseConfig = {
             apiKey: "YOUR_API_KEY",
             authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-            databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+            databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com ",
             projectId: "YOUR_PROJECT_ID",
             storageBucket: "YOUR_PROJECT_ID.appspot.com",
             messagingSenderId: "YOUR_SENDER_ID",
@@ -1297,15 +1177,11 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Close modal when clicking outside
         window.onclick = function(event) {
             const modal = document.getElementById('membershipModal');
-            if (event.target == modal) {
-                closeModal();
-            }
+            if (event.target == modal) closeModal();
         }
 
-        // Show selected file name
         function showFileName(input) {
             if (input.files && input.files[0]) {
                 document.getElementById('fileName').textContent = 'තෝරාගත් ගොනුව: ' + input.files[0].name;
@@ -1322,7 +1198,6 @@
             submitBtn.disabled = true;
 
             try {
-                // Get form values
                 const fullName = document.getElementById('fullName').value;
                 const email = document.getElementById('email').value;
                 const phone = document.getElementById('phone').value;
@@ -1335,35 +1210,24 @@
 
                 let receiptURL = '';
 
-                // Upload receipt if exists
                 if (receiptFile) {
                     const storageRef = storage.ref('receipts/' + Date.now() + '_' + receiptFile.name);
                     const uploadTask = await storageRef.put(receiptFile);
                     receiptURL = await uploadTask.ref.getDownloadURL();
                 }
 
-                // Save to Realtime Database
                 const newMemberRef = database.ref('members').push();
                 await newMemberRef.set({
-                    fullName: fullName,
-                    email: email,
-                    phone: phone,
-                    batchYear: batchYear,
-                    occupation: occupation,
-                    country: country,
-                    donationAmount: donationAmount,
-                    message: message,
-                    receiptURL: receiptURL,
+                    fullName, email, phone, batchYear, occupation, country,
+                    donationAmount, message, receiptURL,
                     timestamp: firebase.database.ServerValue.TIMESTAMP,
                     status: 'pending'
                 });
 
-                // Show success message
                 document.getElementById('successMessage').style.display = 'block';
                 document.getElementById('membershipForm').reset();
                 document.getElementById('fileName').textContent = '';
 
-                // Close modal after 3 seconds
                 setTimeout(() => {
                     closeModal();
                     document.getElementById('successMessage').style.display = 'none';
@@ -1378,35 +1242,24 @@
             }
         });
 
-        // Smooth scrolling for navigation links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
             });
         });
 
-        // Mobile menu toggle
         function toggleMobileMenu() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         }
 
-        // Add scroll effect to navbar
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)';
-            } else {
-                navbar.style.boxShadow = '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
-            }
+            navbar.style.boxShadow = window.scrollY > 50 ? '0 4px 20px rgba(0,0,0,0.2)' : '0 4px 6px -1px rgba(0, 0, 0, 0.1)';
         });
     </script>
 </body>
-</html>
+</html> 
